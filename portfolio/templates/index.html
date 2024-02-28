@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href='{% static "css/style.css" %}'>
+    <!-- <link rel="stylesheet" href="css/bootstrap-reboot.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+{% load static %}
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src='{% static "images/logo.png" %}' class="logo" alt="">
+                <ul id="sidemenu">
+                    <li><a href="#header">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <i class="fas fa-times" onclick="closemenu()"></i>
+                </ul>
+                <i class="fas fa-bars" onclick="openmenu()"></i>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Hi, I'm <span>Mohsin K</span><br> from Tiruvannamalai</h1>
+            </div>
+        </div>
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col1">
+                    <img src='{% static "images/user.png" %}' alt="">
+                </div>
+                <div class="about-col2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>I Would like to challenge myself to push boundaries and discover innovative sollution and upgrade my skills to newer IT skills of the future.</p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>Python</span><br>Building web/App Interfaces</li>
+                            <li><span>React</span><br>Single Page Website</li>
+                            <li><span>Django</span><br>Integrate Frontend and backend</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>Internship</span><br>Remote Internship in TCS - <a id="intern"  class="external-links" href="#" onclick="openmodal('intern')">Cetrificate</a> <a class="external-links" id="intern-git" href="#" onclick="openmodal('intern-git')">GIT</a> <a class="external-links" id="intern-demo" href="#" onclick="openmodal('intern-demo')">Demo</a></li>
+                            <li><span>Machine Learning</span><br>Identifying patterns and trends in campus placement data <div>Click to view - <a class="external-links" id="campus" href="#" onclick="openmodal('campus')">Cetrificate</a> <a class="external-links" id="campus-git" href="#" onclick="openmodal('campus-git')">GIT</a> <a class="external-links" id="campus-demo" href="#" onclick="openmodal('campus-demo')">Demo</a></div> </li>
+                            <li><span>Linux</span><br>Wi-fi hacking with airodump-ng - <a class="external-links" id="wifi-demo" href="#" onclick="openmodal('wifi-demo')">Demo</a></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2024 - Current</span><br>Full Stack Python in Greens Technologies</li>
+                            <li><span>2023 - UG 78%</span><br>B.Sc Computer Science in Thiruvalluvar University</li>  
+                            <li><span>12th - 60%</span><br>Shanmuga Industries Govt Higher Secondary School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- services -->
+    <div id="services">
+        <div class="container">
+            <h1 class="sub-title">My Services</h1>
+            <div class="services-list">
+                <div class="">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p class="lp">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quisquam ex vel illo non! Deserunt!</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="">
+                    <i class="fa-solid fa-crop-simple"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quisquam ex vel illo non! Deserunt!</p>
+                    <a href="#">Learn More</a>
+                </div>
+                <div class="">
+                    <i class="fab fa-app-store"></i>
+                    <h2>Web Design</h2>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quisquam ex vel illo non! Deserunt!</p>
+                    <a href="#">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio -->
+
+<div id="portfolio">
+    <div class="container">
+            <h1 class="sub-title">My Work</h1>
+            <div class="work-list">
+                <div class="work">
+                    <img src='{% static "images/work-1.png" %}' alt="">
+                    <div class="layer">
+                        <h3>Social Media App</h3>
+                        <p>The app connect you to the talented people around the world. Download it from play store.</p>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src='{% static "images/work-2.png" %}' alt="">
+                    <div class="layer">
+                        <h3>Music App</h3>
+                        <p>The app connect you to the talented people around the world. Download it from play store.</p>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="work">
+                    <img src='{% static "images/work-3.png" %}' alt="">
+                    <div class="layer">
+                        <h3>Online Shopping App</h3>
+                        <p>The app connect you to the talented people around the world. Download it from play store.</p>
+                        <a href=""><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="" class="btn">See More</a>
+    </div>
+</div>
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><i class="fas fa-paper-plane"></i>mohsinkalander@gmail.com</p>
+                <p><i class="fas fa-phone-square-alt"></i>8122858436</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="https://github.com/mohsink-11"><i class="fa-brands fa-github-square"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram-square"></i></a>
+                    <a href="https://www.linkedin.com/in/mohsin-kalander-506544282"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href='{% static "images/Mohsin_Resume.pdf" %}' download class='btn btn2'>Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="msg"></span>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>Copyright <i class="fa-regular fa-copyright"></i> Mohsin K</p>
+    </div>
+</div>
+<a href="#" class="to-top"> <i class="fas fa-chevron-up"></i> </a>
+
+<div id="modal">
+    <i id="modal-close" class="fas fa-times"></i>
+    <iframe  id="frame" src="" width="100%" height="800px"></iframe>
+</div>
+
+    <script src='{% static "js/script.js" %}'></script>
+    <!-- <script src="js/bootstrap.min.js"></script>
+    <script src="js/JQuery.min.js"></script>-->
+</body> 
+</html>   
+
