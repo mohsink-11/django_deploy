@@ -21,5 +21,5 @@ from myportfolio import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.myportfolio),
+    path('',views.myportfolio),
 ]
